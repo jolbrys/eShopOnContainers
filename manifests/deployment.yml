@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: jolbryseshoponcontainers 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jolbryseshoponcontainers
+  template:
+    metadata:
+      labels:
+        app: jolbryseshoponcontainers 
+    spec:
+      containers:
+        - name: jolbryseshoponcontainers 
+          image: jolbryseshopregistry.azurecr.io/jolbryseshoponcontainers
+          ports:
+          - containerPort: 80
